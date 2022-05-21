@@ -1,0 +1,9 @@
+def feast(beast, dish):
+    beast.lower()
+    dish.lower()
+    similar = 0
+    if beast[0] == dish[0] and beast[-1] == dish[-1]:
+        similar = True
+    else:
+        similar = False
+    return similar
