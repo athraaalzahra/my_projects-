@@ -1,0 +1,17 @@
+public class SpinWords {
+  public String spinWords(String sentence) {
+     String[] as_list = sentence.split(" ");
+    String result = "";
+    for (String i : as_list){
+      if (i.length() < 5){
+        result += i;
+        result += " ";
+      }
+      else{
+        StringBuilder x = new StringBuilder(i);  
+        result += x.reverse().toString()+" "; 
+      }
+    }
+    return result.trim();
+  }
+}
