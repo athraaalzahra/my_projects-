@@ -1,0 +1,28 @@
+class Solution{
+  static String toCamelCase(String s){
+//     String caps = s.substring(0, 1).toUpperCase() + s.substring(1);
+    
+    char dash = '-';
+    boolean ifdash = false;
+    for (int i = 0; i<s.length(); i++){
+      if (s.charAt(i) == dash){
+        ifdash = true;
+      }
+    }
+    String[] for_dash = s.split("-");
+    String[] for_under = s.split("_");
+    String result = "";
+    if (ifdash){
+      result+=for_dash[0];
+      for (int i = 1; i<for_dash.length; i++){
+        result += for_dash[i].substring(0, 1).toUpperCase() + for_dash[i].substring(1);
+      }
+    }
+    else{
+      result+=for_under[0];
+      for (int i = 1; i<for_under.length; i++){
+        result += for_under[i].substring(0, 1).toUpperCase() + for_under[i].substring(1);
+      }
+    }
+    return result;
+}}
